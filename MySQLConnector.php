@@ -1,6 +1,6 @@
 <?php
 
-  class MySQLConnector
+	class MySQLConnector
 	{
 		private function __construct()
 		{
@@ -33,7 +33,7 @@
 			$stmt->execute();
 			
 			return $stmt;
-	  }
+		}
 	}
 
 ?>
