@@ -3,7 +3,7 @@ MySQLConnector-PHP-MySQL-Wrapper
 
 This is perfect for those who are new to PHP and MySQL interaction and looking for a straight-forward way of working with a database.
 
-This class is a singleton (single instance) which wrap up the basic functionality of PHP's PDO classes. With a simple configuration method and a single 'execute' method, this class makes it very simple to get results from a MySQL database. Your SQL will be made a prepared statement prior to execution, limiting the possibility of SQL injection threats. If you are interested, you can download the class here: <a href="http://jakesankey.com/files/code/MySQLConnectorV2.zip" title="MySQLConnector" target="_blank">MySQLConnector</a>.
+This class is a singleton (single instance) which wraps up the basic functionality of PHP's PDO classes. With a simple configuration method and a single 'execute' method, this class makes it very simple to get results from a MySQL database. Your SQL will be made a prepared statement prior to execution, limiting the possibility of SQL injection threats. If you are interested, you can download the class here: <a href="http://jakesankey.com/files/code/MySQLConnectorV2.zip" title="MySQLConnector" target="_blank">MySQLConnector</a>.
 
 To use MySQLConnector, you first need to include it in your PHP file:
 
