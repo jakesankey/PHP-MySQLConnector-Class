@@ -15,7 +15,8 @@ Then, somewhere in the application you setup the connection parameters (which wi
 
 Once you have done this, you can easily make calls to the database.
 
-Execute a statement:
+<b>Execute a statement:</b>
+
     $result = MySQLConnector::instance()->execute("SELECT * FROM MyTable");
 
 The object returned is a PDOStatement object. So, you can loop through the results, grab a specific value, and execute any of the other native PDOStatement methods.
