@@ -22,23 +22,23 @@ The object returned is a PDOStatement object. So, you can loop through the resul
 
 <b>EXAMPLE:</b>
 
-        function Test()
-        {
-           $result = MySQLConnector::instance()->execute("SELECT * FROM User");
-           $error = $result->errorCode() != "00000";
-           $resultArray = $result->fetchAll();
+    function Test()
+    {
+        $result = MySQLConnector::instance()->execute("SELECT * FROM User");
+        $error = $result->errorCode() != "00000";
+        $resultArray = $result->fetchAll();
         
-           if (!$error)
-           {
-              foreach ($resultArray as $row)
-              {
-                 print $row["FirstName"] . " " . $row["LastName"] . "</br>";
-              }
-           }
-           else
-           {
-              $errorInfo = $result->errorInfo();
-              print "An error occured: " . $errorInfo[2];
-           }
+        if (!$error)
+        {
+            foreach ($resultArray as $row)
+            {
+                print $row["FirstName"] . " " . $row["LastName"] . "</br>";
+            }
         }
+        else
+        {
+            $errorInfo = $result->errorInfo();
+            print "An error occured: " . $errorInfo[2];
+        }
+    }
 
