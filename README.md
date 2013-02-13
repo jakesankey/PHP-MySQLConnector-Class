@@ -43,7 +43,7 @@ The object returned is a PDOStatement object. So, you can loop through the resul
         }
     }
 
-<b>LICENSE:</b>
+<b>MIT LICENSE:</b>
 
 Copyright (c) 2013 Jake Sankey
 
