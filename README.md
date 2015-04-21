@@ -19,14 +19,17 @@ Once you have done this, you can easily make calls to the database.
 
 <b>Execute a statement:</b>
 ```php
-    $result = MySQLConnector::instance()->execute("SELECT * FROM MyTable");
+    $db = MySQLConnector::instance();
+    $result = $db->execute("SELECT * FROM MyTable WHERE Foo = :bar", array("bar", baz));
 ```
 The object returned is a PDOStatement object. So, you can loop through the results, grab a specific value, and execute any of the other native PDOStatement methods.
 
 <b>EXAMPLE:</b>
 ```php
     function Test() {
-        $result = MySQLConnector::instance()->execute("SELECT * FROM User");
+        $query = "SELECT * FROM User WHERE Age > :age";
+        $params = array("age" => 18)
+        $result = MySQLConnector::instance()->execute(query, params);
         $error = $result->errorCode() != "00000";
         $resultArray = $result->fetchAll();
         
