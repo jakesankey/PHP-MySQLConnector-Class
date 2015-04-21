@@ -2,6 +2,12 @@
 
 	class MySQLConnector
 	{
+		private static $_host;
+		private static $_port;
+		private static $_dbName;
+		private static $_username;
+		private static $_password;
+		
 		private function __construct()
 		{
 		}
@@ -18,19 +24,19 @@
 		
 		public static function setDefaultConnection($host, $port, $dbName, $username, $password)
 		{
-			$_SESSION["host"] = $host;
-			$_SESSION["port"] = $port;
-			$_SESSION["database"] = $dbName;
-			$_SESSION["username"] = $username;
-			$_SESSION["password"] = $password;
+			$_host = $host;
+			$_port = $port;
+			$_dbName = $dbName;
+			$_username = $username;
+			$_password = $password;
 		}
 
-		public function execute($query)
+		public function execute($query, $params)
 		{
-			$conn = new PDO("mysql:host=".$_SESSION["host"].";port=".$_SESSION["port"].";dbname=".$_SESSION["database"], $_SESSION["username"], $_SESSION["password"]);
+			$conn = new PDO("mysql:host=".$_host.";port=".$_port.";dbname=".$_dbName, $_username, $_password);
 			
 			$stmt = $conn->prepare($query);
-			$stmt->execute();
+			$stmt->execute($params);
 			
 			return $stmt;
 		}
