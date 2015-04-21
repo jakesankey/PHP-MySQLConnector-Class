@@ -26,7 +26,9 @@ The object returned is a PDOStatement object. So, you can loop through the resul
 <b>EXAMPLE:</b>
 ```php
     function Test() {
-        $result = MySQLConnector::instance()->execute("SELECT * FROM User");
+        $query = "SELECT * FROM User WHERE Age > :age";
+        $params = array("age" => 18)
+        $result = MySQLConnector::instance()->execute(query, params);
         $error = $result->errorCode() != "00000";
         $resultArray = $result->fetchAll();
         
